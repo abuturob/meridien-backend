@@ -57,7 +57,7 @@ app.post('/api/lead', async (req, res) => {
     const { name, phone, package: pkg, message } = req.body;
 
     // Validatsiya
-    if (!name || !name.trim()) {
+    if (!name) {
       return res.status(400).json({ success: false, error: "Ism majburiy" });
     }
     if (!phone || !phone.trim()) {
