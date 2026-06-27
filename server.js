@@ -23,10 +23,7 @@ app.post('/api/lead', async (req, res) => {
   try {
     const { name, phone, package: pkg, message } = req.body;
 
-    if (!name || !phone) {
-      return res.status(400).json({ success: false, error: "Ism va telefon majburiy" });
-    }
-
+    
     const leads = JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
     const newLead = {
       id: Date.now(),
